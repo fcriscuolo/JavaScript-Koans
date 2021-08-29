@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pipetus/JavaScript-Koans.git"
+    "url": "git+https://github.com/fcriscuolo/JavaScript-Koans.git"
   },
   "keywords": [
     "javascript",
     "koans"
   ],
-  "author": "",
+  "author": "TP - JavaScript-Koans, Federico Criscuolo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pipetus/JavaScript-Koans/issues"
+    "url": "https://github.com/fcriscuolo/JavaScript-Koans/issues"
   },
-  "homepage": "https://github.com/pipetus/JavaScript-Koans#readme"
+  "homepage": "https://github.com/fcriscuolo/JavaScript-Koans#readme"
 }
