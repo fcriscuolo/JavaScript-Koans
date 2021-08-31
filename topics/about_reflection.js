@@ -2,6 +2,12 @@
 const { equal, deepEqual, ok } = require('assert')
 const { __, test } = require('../support/koans')
 
+// <--- ESTE ESTA INCOMPLETO -----
+
+// ---- Limpio la consola durante las pruebas. ---
+//console.clear
+// ----------------------------
+
 function A() {
     this.aprop = "A";
 };
@@ -13,10 +19,10 @@ function B() {
 B.prototype = new A();
 
 test("typeof", () => {
-    equal(__, typeof({}), 'what is the type of an empty object?');
-    equal(__, typeof('apple'), 'what is the type of a string?');
-    equal(__, typeof(-5), 'what is the type of -5?');
-    equal(__, typeof(false), 'what is the type of false?');
+    equal("object", typeof({}), 'what is the type of an empty object?');
+    equal("string", typeof('apple'), 'what is the type of a string?');
+    equal("number", typeof(-5), 'what is the type of -5?');
+    equal("boolean", typeof(false), 'what is the type of false?');
 });
 
 test("property enumeration", () => {
