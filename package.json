@@ -5,8 +5,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node ./",
-		"koans": ""
+    "start": "node ./topics/about_asserts.js && node ./topics/about_operators.js && node ./topics/about_equality.js node ./topics/about_truthyness.js && node ./topics/about_assignment.js && node ./topics/about_control_structures.js && node ./topics/about_strings.js && node ./topics/about_numbers.js && node ./topics/about_objects.js && node ./topics/about_arrays.js && node ./topics/about_prototype_chain.js && node ./topics/about_prototypal_inheritance.js && node ./topics/about_functions_and_closure.js && node ./topicsabout_scope.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/fcriscuolo/JavaScript-Koans/issues"
   },
-  "homepage": "https://github.com/fcriscuolo/JavaScript-Koans#readme"
+  "homepage": "https://github.com/fcriscuolo/JavaScript-Koans#readme",
+  "dependencies": {
+    "start": "^5.1.0"
+  }
 }
