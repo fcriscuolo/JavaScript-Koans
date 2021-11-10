@@ -1,12 +1,6 @@
 // module("About Reflection (topics/about_reflection.js)");
 const { equal, deepEqual, ok } = require('assert')
-const { __, test } = require('../support/koans')
-
-// <--- ESTE ESTA INCOMPLETO -----
-
-// ---- Limpio la consola durante las pruebas. ---
-//console.clear
-// ----------------------------
+const test = require('../support/koans').test
 
 function A() {
     this.aprop = "A";
@@ -39,20 +33,20 @@ test("property enumeration", () => {
         values.push(person[propertyName]);
     }
 
-    ok(keys.equalTo(['__','__','__']), 'what are the property names of the object?');
-    ok(values.equalTo(['__',__,__]), 'what are the property values of the object?');
+    ok(keys.equalTo(['name','age','unemployed']), 'what are the property names of the object?');
+    ok(values.equalTo(['Amory Blaine',102,true]), 'what are the property values of the object?');
 });
 
 test("hasOwnProperty", () => {
     const b = new B();
-    const propertyName;
+    let propertyName; //Cambie const por let sino rompe
 
     const keys = [];
     for (propertyName in b) {
         keys.push(propertyName);
     }
-    equal(__, keys.length, 'how many elements are in the keys array?');
-    deepEqual([__, __], keys, 'what are the properties of the array?');
+    equal(2, keys.length, 'how many elements are in the keys array?');
+    deepEqual(["bprop", "aprop"], keys, 'what are the properties of the array?');
 
     // hasOwnProperty returns true if the parameter is a property directly on the object,
     // but not if it is a property accessible via the prototype chain.
@@ -62,21 +56,21 @@ test("hasOwnProperty", () => {
             ownKeys.push(propertyName);
         }
     }
-    equal(__, ownKeys.length, 'how many elements are in the ownKeys array?');
-    deepEqual([__], ownKeys, 'what are the own properties of the array?');
+    equal(1, ownKeys.length, 'how many elements are in the ownKeys array?');
+    deepEqual(["bprop"], ownKeys, 'what are the own properties of the array?');
 });
 
 test("constructor property", () => {
     const a = new A();
     const b = new B();
-    equal(__, typeof(a.constructor), "what is the type of a's constructor?");
-    equal(__, a.constructor.name, "what is the name of a's constructor?");
-    equal(__, b.constructor.name, "what is the name of b's constructor?");
+    equal("function", typeof(a.constructor), "what is the type of a's constructor?");
+    equal("A", a.constructor.name, "what is the name of a's constructor?");
+    equal("A", b.constructor.name, "what is the name of b's constructor?"); //Porque B es prototype de A?
 });
 
 test("eval", () => {
     // eval executes a string
     let result = "";
     eval("result = 'apple' + ' ' + 'pie'");
-    equal(__, result, 'what is the value of result?');
+    equal('apple pie', result, 'what is the value of result?');
 });
